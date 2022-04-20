@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class GeometricFigures {
     public static void main(String[] args) {
-
-        setka();
+        emptyDiagonal();
     }
 
     public static int input() {
@@ -38,13 +37,10 @@ public class GeometricFigures {
     public static void emptySquare() {
         int n = input();
         for (int i = 0; i < n; i++) {
-
             if (i == 0 || i == (n - 1)) {
-
                 for (int j = 0; j < (n - 1); j++) {
                     System.out.print("*  ");
                 }
-
             } else {
                 System.out.print("*  ");
                 for (int j = 0; j < (n - 2); j++) {
@@ -78,8 +74,8 @@ public class GeometricFigures {
     public static void triangle3() {
         int n = input();
         for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < n - i; j++) {
-                System.out.print("   ");
+            for (int j = 0; j < (n - i); j++) {
+                System.out.print("  ");
             }
             for (int j = i; j > 0; j--) {
                 System.out.print("*  ");
