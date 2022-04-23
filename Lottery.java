@@ -80,10 +80,12 @@ public class Lottery {
                 }
             }
             if (count1 == 5 && count2 == 5) {
+                System.out.print("| ");
                 for (int j = 0; j < ticket1.length; j++) {
                     System.out.print(ticket1[j] + " | ");
                 }
                 System.out.println();
+                System.out.print("| ");
                 for (int j = 0; j < ticket2.length; j++) {
                     System.out.print(ticket2[j] + " | ");
                 }
@@ -92,10 +94,12 @@ public class Lottery {
                 break;
             }
             if (count1 == 5) {
+                System.out.print("| ");
                 for (int j = 0; j < ticket1.length; j++) {
                     System.out.print(ticket1[j] + " | ");
                 }
                 System.out.println();
+                System.out.print("| ");
                 for (int j = 0; j < ticket2.length; j++) {
                     System.out.print(ticket2[j] + " | ");
                 }
@@ -104,10 +108,12 @@ public class Lottery {
                 break;
             }
             if (count2 == 5) {
+                System.out.print("| ");
                 for (int j = 0; j < ticket1.length; j++) {
                     System.out.print(ticket1[j] + " | ");
                 }
                 System.out.println();
+                System.out.print("| ");
                 for (int j = 0; j < ticket2.length; j++) {
                     System.out.print(ticket2[j] + " | ");
                 }
