@@ -92,7 +92,7 @@ public class Lottery {
                 System.out.println();
                 System.out.println("Won both tickets");
                 System.out.println("The following numbers are left in the bag");
-                for (int j = i; j < checkers.length; j++) {
+                for (int j = (i + 1); j < checkers.length; j++) {
                     System.out.print(checkers[j] + " ");
                 }
                 break;
@@ -110,7 +110,7 @@ public class Lottery {
                 System.out.println();
                 System.out.println("Won ticket1");
                 System.out.println("The following numbers are left in the bag");
-                for (int j = i; j < checkers.length; j++) {
+                for (int j = (i + 1); j < checkers.length; j++) {
                     System.out.print(checkers[j] + " ");
                 }
                 break;
@@ -128,7 +128,7 @@ public class Lottery {
                 System.out.println();
                 System.out.println("Won ticket2");
                 System.out.println("The following numbers are left in the bag");
-                for (int j = i; j < checkers.length; j++) {
+                for (int j = (i + 1); j < checkers.length; j++) {
                     System.out.print(checkers[j] + " ");
                 }
                 break;
