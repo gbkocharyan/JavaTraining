@@ -91,6 +91,10 @@ public class Lottery {
                 }
                 System.out.println();
                 System.out.println("Won both tickets");
+                System.out.println("The following numbers are left in the bag");
+                for (int j = i; j < checkers.length; j++) {
+                    System.out.print(checkers[j] + " ");
+                }
                 break;
             }
             if (count1 == 5) {
@@ -105,6 +109,10 @@ public class Lottery {
                 }
                 System.out.println();
                 System.out.println("Won ticket1");
+                System.out.println("The following numbers are left in the bag");
+                for (int j = i; j < checkers.length; j++) {
+                    System.out.print(checkers[j] + " ");
+                }
                 break;
             }
             if (count2 == 5) {
@@ -119,6 +127,10 @@ public class Lottery {
                 }
                 System.out.println();
                 System.out.println("Won ticket2");
+                System.out.println("The following numbers are left in the bag");
+                for (int j = i; j < checkers.length; j++) {
+                    System.out.print(checkers[j] + " ");
+                }
                 break;
             }
 
