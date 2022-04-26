@@ -133,8 +133,8 @@ public class Lottery {
                 }
                 break;
             }
-
         }
     }
+
 
 }
