@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Array {
     public static void main(String[] args) {
-        SQRT();
+        countOfImportedNumber();
     }
 
 
@@ -28,9 +28,9 @@ public class Array {
          for (int i = 0; i < array.length; i++) {
              array[i] = random.nextInt(minNumber, maxNumber);
          }
-         System.out.print("| ");
+         System.out.print("|");
          for (int i = 0; i < array.length; i++) {
-             System.out.print(array[i] + " | ");
+             System.out.print(array[i] + "|");
          }
         System.out.println();
          return array;
@@ -51,12 +51,12 @@ public class Array {
 
     public static void SQRT() {
         int[] array = randomArray();
-        int[] resultArray = new int[array.length];
+        int[] sqrtArray = new int[array.length];
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 2; j <= array[i] / 2; j++) {
                 if (j * j == array[i]) {
-                    resultArray[i] = array[i];
+                    sqrtArray[i] = array[i];
                     count++;
                 }
             }
@@ -65,19 +65,19 @@ public class Array {
             System.out.println("There is no number in array which have square root");
         } else if (count > 1) {
             System.out.println("The following numbers in array have square root:");
-            for (int i = 0; i < resultArray.length; i++) {
-                if(resultArray[i] > 0) {
-                    System.out.print(resultArray[i] + " ");
+            for (int i = 0; i < sqrtArray.length; i++) {
+                if(sqrtArray[i] > 0) {
+                    System.out.print(sqrtArray[i] + " ");
                 }
             }
             int max = Integer.MIN_VALUE;
             int min = Integer.MAX_VALUE;
-            for (int i = 0; i < resultArray.length; i++) {
-                if (max < resultArray[i]) {
-                    max = resultArray[i];
+            for (int i = 0; i < sqrtArray.length; i++) {
+                if (max < sqrtArray[i]) {
+                    max = sqrtArray[i];
                 }
-                if (resultArray[i] > 0 && min > resultArray[i]) {
-                    min = resultArray[i];
+                if (sqrtArray[i] > 0 && min > sqrtArray[i]) {
+                    min = sqrtArray[i];
                 }
             }
             System.out.println();
@@ -88,9 +88,9 @@ public class Array {
             }
         } else {
             System.out.print("There is one number which have square root: ");
-            for (int i = 0; i < resultArray.length; i++) {
-                if (resultArray[i] > 0) {
-                    System.out.print(resultArray[i]);
+            for (int i = 0; i < sqrtArray.length; i++) {
+                if (sqrtArray[i] > 0) {
+                    System.out.print(sqrtArray[i]);
                 }
             }
         }
