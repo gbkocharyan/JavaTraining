@@ -1,6 +1,6 @@
-package com.company.DynamicArray;
+package com.company.Dynamic;
 
-public class DynamicArray {
+public class DynamicArray implements Changeable {
     private String array[];
     private int count;
     private int sizeOfArray;
@@ -36,7 +36,8 @@ public class DynamicArray {
     }
 
     //method that appends an element at the end of the array
-    public void addElement(String element) {
+    @Override
+    public void add(String element) {
         if (count == sizeOfArray) {
             growSize();
         }
@@ -46,7 +47,7 @@ public class DynamicArray {
 
 
     //method that creates an array of larger size
-    public void growSize() {
+    private void growSize() {
         String[] temp = null;
         if (count == sizeOfArray) {
             temp = new String[sizeOfArray + 16];
@@ -59,7 +60,7 @@ public class DynamicArray {
     }
 
     //method that adds an element at the specified index
-    public void addElementAt(int index, String element) {
+    public void addAt(int index, String element) {
         if (count == sizeOfArray) {
             growSize();
         }
@@ -71,7 +72,7 @@ public class DynamicArray {
     }
 
     //method that removes the last elements for the array
-    public void removeElement() {
+    public void delete() {
         if (count > 0) {
             array[count - 1] = null;
             count--;
@@ -80,13 +81,57 @@ public class DynamicArray {
 
 
     //method that deletes an element from the specified index
-    public void removeElementAt(int index) {
+    @Override
+    public void deleteAtPosition(int index) {
         if (count > 0) {
             for (int i = index; i < count - 1; i++) {
                 array[i] = array[i + 1];
             }
             array[count - 1] = null;
             count--;
+        }
+    }
+
+    @Override
+    public void clean() {
+        if (count > 0) {
+            for (int i = 0; i < sizeOfArray; i++) {
+                array[i] = null;
+            }
+            reduceSize();
+        }
+    }
+
+    @Override
+    public String getByPosition(int index) {
+        String element = null;
+        if (count <= 0) {
+            System.out.println("\nThe array is empty");
+            return null;
+        } else if (index < 0 || index > count) {
+            System.out.println("\nThe index is out of range of the array");
+            return null;
+        } else {
+            for (int i = 0; i < sizeOfArray; i++) {
+                if (i == index) {
+                    System.out.println("\n" + index + " position element is: " + array[i]);
+                    element = array[i];
+                    break;
+                }
+            }
+        }
+        return element;
+    }
+
+    @Override
+    public void print() {
+        if (count <= 0) {
+            System.out.println("\nThe array is empty!");
+        } else {
+            System.out.print("\nArray: ");
+            for (int i = 0; i < sizeOfArray; i++) {
+                System.out.print(array[i] + " ");
+            }
         }
     }
 
@@ -103,6 +148,16 @@ public class DynamicArray {
             array = temp;
         }
     }
+
+    //method that returns the size of array
+    @Override
+    public int getSize() {
+        System.out.println("\nSize of array equals " + count);
+        return count;
+    }
+
+
+
 
 
 }
