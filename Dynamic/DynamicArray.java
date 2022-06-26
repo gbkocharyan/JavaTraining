@@ -59,6 +59,7 @@ public class DynamicArray implements Changeable {
         array = temp;
     }
 
+
     //method that adds an element at the specified index
     public void addAt(int index, String element) {
         if (count == sizeOfArray) {
@@ -70,6 +71,7 @@ public class DynamicArray implements Changeable {
         array[index] = element;
         count++;
     }
+
 
     //method that removes the last elements for the array
     public void delete() {
@@ -134,7 +136,6 @@ public class DynamicArray implements Changeable {
             }
         }
     }
-
 
     //method that removes the unused space
     public void reduceSize() {
