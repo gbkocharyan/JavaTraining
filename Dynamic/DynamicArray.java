@@ -1,15 +1,15 @@
 package com.company.Dynamic;
 
-public class DynamicArray implements Changeable {
-    private String array[];
+public class DynamicArray <T> {
+    private T[] array;
     private int count;
     private int sizeOfArray;
 
-    public String[] getArray() {
+    public T[] getArray() {
         return array;
     }
 
-    public void setArray(String[] array) {
+    public void setArray(T[] array) {
         this.array = array;
     }
 
@@ -31,13 +31,13 @@ public class DynamicArray implements Changeable {
 
     public DynamicArray() {
         sizeOfArray = 16;
-        array = new String[sizeOfArray];
+        array = (T[]) new Object[sizeOfArray];
         count = 0;
     }
 
     //method that appends an element at the end of the array
-    @Override
-    public void add(String element) {
+
+    public void add(T element) {
         if (count == sizeOfArray) {
             growSize();
         }
@@ -48,9 +48,9 @@ public class DynamicArray implements Changeable {
 
     //method that creates an array of larger size
     private void growSize() {
-        String[] temp = null;
+        T[] temp = null;
         if (count == sizeOfArray) {
-            temp = new String[sizeOfArray + 16];
+            temp = (T[]) new Object[sizeOfArray + 16];
             for (int i = 0; i < sizeOfArray; i++) {
                 temp[i] = array[i];
             }
@@ -61,7 +61,7 @@ public class DynamicArray implements Changeable {
 
 
     //method that adds an element at the specified index
-    public void addAt(int index, String element) {
+    public void addAt(int index, T element) {
         if (count == sizeOfArray) {
             growSize();
         }
@@ -83,7 +83,7 @@ public class DynamicArray implements Changeable {
 
 
     //method that deletes an element from the specified index
-    @Override
+
     public void deleteAtPosition(int index) {
         if (count > 0) {
             for (int i = index; i < count - 1; i++) {
@@ -94,7 +94,7 @@ public class DynamicArray implements Changeable {
         }
     }
 
-    @Override
+
     public void clean() {
         if (count > 0) {
             for (int i = 0; i < sizeOfArray; i++) {
@@ -104,9 +104,9 @@ public class DynamicArray implements Changeable {
         }
     }
 
-    @Override
-    public String getByPosition(int index) {
-        String element = null;
+
+    public T getByPosition(int index) {
+        T element = null;
         if (count <= 0) {
             System.out.println("\nThe array is empty");
             return null;
@@ -125,7 +125,7 @@ public class DynamicArray implements Changeable {
         return element;
     }
 
-    @Override
+
     public void print() {
         if (count <= 0) {
             System.out.println("\nThe array is empty!");
@@ -139,9 +139,9 @@ public class DynamicArray implements Changeable {
 
     //method that removes the unused space
     public void reduceSize() {
-        String[] temp = null;
+        T[] temp = null;
         if (count > 0) {
-            temp = new String[count];
+            temp = (T[]) new Object[count];
             for (int i = 0; i < count; i++) {
                 temp[i] = array[i];
             }
@@ -151,7 +151,6 @@ public class DynamicArray implements Changeable {
     }
 
     //method that returns the size of array
-    @Override
     public int getSize() {
         System.out.println("\nSize of array equals " + count);
         return count;

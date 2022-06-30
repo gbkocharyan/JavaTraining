@@ -1,20 +1,17 @@
 package com.company.Dynamic;
 
-public class Node {
-    private String data;
-    Node next;
+public class Node <T> {
+    private T data;
+    Node <T> next;
 
     // Constructor
-    Node(String data) {
+    Node(T data) {
         this.data = data;
         next = null;
     }
 
-    public String getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(String data) {
-        this.data = data;
-    }
 }

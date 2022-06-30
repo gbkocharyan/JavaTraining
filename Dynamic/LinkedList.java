@@ -1,14 +1,13 @@
 package com.company.Dynamic;
 
-public class LinkedList implements Changeable {
-    private Node head;
+public class LinkedList <T> {
+    private Node <T> head;
     private int count = 0;
 
     // Method to insert a new node from the end
-    @Override
-    public void add(String data) {
+    public void add(T data) {
         // Create a new node with given data
-        Node newNode = new Node(data);
+        Node <T> newNode = new Node <T> (data);
         newNode.next = null;
 
         // If the Linked List is empty, then make the new node as head
@@ -16,7 +15,7 @@ public class LinkedList implements Changeable {
             this.head = newNode;
         } else {
             // Else traverse till the last node and insert the newNode there
-            Node last = this.head;
+            Node <T> last = this.head;
             while (last.next != null) {
                 last = last.next;
             }
@@ -26,10 +25,9 @@ public class LinkedList implements Changeable {
         count++;
     }
 
-
     // Method to insert a new node from the beginning
-    public void addFromTheBeginning(String data) {
-        Node newNode = new Node(data);
+    public void addFromTheBeginning(T data) {
+        Node <T> newNode = new Node <T>(data);
 
         if (this.head != null) {
             newNode.next = this.head;
@@ -39,7 +37,6 @@ public class LinkedList implements Changeable {
     }
 
     // Method that returns size
-    @Override
     public int getSize() {
         System.out.println("\nSize of LinkedList equals " + count);
         return count;
@@ -47,10 +44,10 @@ public class LinkedList implements Changeable {
 
 
     // Method to delete a node in the LinkedList by KEY
-    public void deleteByKey(String key) {
+    public void deleteByKey(T key) {
         // Store head node
-        Node currNode = this.head;
-        Node prev = null;
+        Node <T> currNode = this.head;
+        Node <T> prev = null;
 
         // CASE 1: If head node itself holds the key to be deleted
         if (currNode != null && currNode.getData().equals(key)) {
@@ -90,11 +87,10 @@ public class LinkedList implements Changeable {
 
 
     // Method to delete a node in the LinkedList by POSITION
-    @Override
     public void deleteAtPosition(int index) {
         // Store head node
-        Node currNode = this.head;
-        Node prev = null;
+        Node <T> currNode = this.head;
+        Node <T> prev = null;
 
         // CASE 1: If index is 0, then head node itself is to be deleted
         if (index == 0 && currNode != null) {
@@ -136,9 +132,8 @@ public class LinkedList implements Changeable {
 
 
     // Method to delete all nodes in the LinkedList
-    @Override
     public void clean() {
-        Node currNode = this.head;
+        Node <T> currNode = this.head;
 
         while (currNode != null) {
             this.head = currNode.next;
@@ -149,7 +144,7 @@ public class LinkedList implements Changeable {
 
     // Method to print the LinkedList.
     public void print() {
-        Node currNode = this.head;
+        Node <T> currNode = this.head;
 
         System.out.print("\nLinkedList: ");
 
@@ -166,10 +161,9 @@ public class LinkedList implements Changeable {
 
 
     // Method to get a node from the LinkedList by position
-    @Override
-    public String getByPosition(int index) {
-        Node currNode = this.head;
-        Node newNode = null;
+    public T getByPosition(int index) {
+        Node <T> currNode = this.head;
+        Node <T> newNode = null;
 
         if (index == 0 && currNode != null) {
             newNode = currNode;
@@ -196,8 +190,8 @@ public class LinkedList implements Changeable {
 
 
     // Method to get a node from the LinkedList by KEY
-    public String getByKey(String key) {
-        Node currNode = this.head;
+    public T getByKey(String key) {
+        Node <T> currNode = this.head;
 
         while (currNode != null && !currNode.getData().equals(key)) {
             currNode = currNode.next;

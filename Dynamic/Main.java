@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-//        LinkedList myList = new LinkedList();
+//        LinkedList <String> myList = new LinkedList<>();
 //        myList.add("A");
 //        myList.add("B");
 //        myList.add("C");

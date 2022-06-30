@@ -1,8 +1,8 @@
 package com.company.Dynamic;
 
-public interface Changeable {
+public interface Changeable <T> {
 
-    void add(String data);
+    void add(T data);
     int getSize();
     void deleteAtPosition(int index);
     void clean();
