@@ -15,7 +15,7 @@ public class Controller {
     }
 
 
-    // ayl tarberak, bayc voch ardyunavet
+    // another version, but not effective
     //    private static Controller instance = new Controller();
 //
 //    public Controller getInstance() {
